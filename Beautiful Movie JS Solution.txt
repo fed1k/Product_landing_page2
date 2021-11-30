@@ -1,0 +1,29 @@
+Beautiful movies code
+ let count = 0;
+   
+    for (let a = i; a <= j; a++) {
+        
+        if (beautifulDay(a, k)) {
+            count++;
+        }
+    }
+ 
+    return count;
+}
+
+function beautifulDay(a, k) {
+   
+    return differenceOfReverse(a) % k === 0;
+}
+
+function differenceOfReverse(a) {
+    let reversedX = parseInt(
+        a
+            .toString()
+            .split('')
+            .reverse()
+            .join('')
+    );
+   
+    return Math.abs(a - reversedX);
+}
